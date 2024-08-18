@@ -1,0 +1,43 @@
+# Author: Khaled G. @ Allez Labs
+# This is the configuration file for ingesting key data from stablecoins
+# to build the DeFi Dollar Rates
+name: TestUnderlyingDataArb
+description: Arbitrum underlying stablecoin data
+project_type: no-code
+networks:
+- name: arbitrum
+  chain_id: 42161
+  rpc: ${ARBITRUM_RPC}
+  compute_units_per_seconds: 100
+storage:
+  postgres:
+    enabled: true
+contracts:
+- name: stablecoins
+  details:
+  - network: arbitrum
+    address: 0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9
+    start_block: '228105'
+  - network: arbitrum
+    address: 0xaf88d065e77c8cC2239327C5EDb3A432268e5831
+    start_block: '34266938'
+  - network: arbitrum
+    address: 0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8
+    start_block: '2609'
+  - network: arbitrum
+    address: 0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1
+    start_block: '1336824'
+  - network: arbitrum
+    address: 0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F
+    start_block: '1693791'
+  - network: arbitrum
+    address: 0x7dfF72693f6A4149b17e7C6314655f6A9F7c8B33
+    start_block: '224701178'
+  - network: arbitrum
+    address: 0x3F56e0c36d275367b8C502090EDF38289b3dEa0d
+    start_block: '3230848'
+  - network: arbitrum
+    address: 0xFEa7a6a0B346362BF88A9e4A88416B77a57D6c2A
+    start_block: '779671'
+  abi: './abis/erc20.abi.json'
+
